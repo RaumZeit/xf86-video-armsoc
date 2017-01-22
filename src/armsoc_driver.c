@@ -733,6 +733,8 @@ static struct drmmode_interface *get_drmmode_implementation(int drm_fd)
 	struct drmmode_interface *ifaces[] = {
 		&exynos_interface,
 		&pl111_interface,
+		&kirin_interface,
+		&sti_interface,
 		&rockchip_interface,
 	};
 	int i;
@@ -752,6 +754,7 @@ static struct drmmode_interface *get_drmmode_implementation(int drm_fd)
 	drmFreeVersion(version);
 	return ret;
 }
+
 
 /**
  * The driver's PreInit() function.  Additional hardware probing is allowed
